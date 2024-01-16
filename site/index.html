@@ -9,7 +9,8 @@
    <input id="off_led_green" type="button" value="выкл">
    <input id="on_led_yellow" type="button" value="вкл">
    <input id="off_led_yellow" type="button" value="выкл">
-   <script>
+ </body>
+<script>
       let data_led_green_on= document.getElementById("on_led_green")
       data_led_green_on.addEventListener("click",()=>{
       fetch("http://iocontrol.ru/api/sendData/alisa17/led_green/1")
@@ -27,5 +28,4 @@
       fetch("http://iocontrol.ru/api/sendData/alisa17/led_yellow/0")
       })
    </script>
- </body>
 </html>
