@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NGINX on Railway</title>
-    <meta name="description" content="Choo Choo!" />
-
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="/styles.css?v=1.0" />
-  </head>
-
-  <body>
-    <main>
-      <img
-        src="https://railway.app/brand/logo-light.svg"
-        alt="Railway logo"
-        class="logo"
-      />
-
-      <h1>NGINX on Railway</h1>
-
-      <p>
-        Choo Choo! This is an example of an NGINX static site running on
-        Railway.
-        <a
-          href="https://github.com/railwayapp/starters/tree/master/examples/nginx"
-          >View source</a
-        >.
-      </p>
-    </main>
-
-    <script src="/script.js"></script>
-  </body>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег INPUT</title>
+ </head>
+ <body>
+   <input id="on_led_green" type="button" value="вкл">
+   <input id="off_led_green" type="button" value="выкл">
+   <input id="on_led_yellow" type="button" value="вкл">
+   <input id="off_led_yellow" type="button" value="выкл">
+   <script>
+      let data_led_green_on= document.getElementById("on_led_green")
+      data_led_green_on.addEventListener("click",()=>{
+      fetch("http://iocontrol.ru/api/sendData/alisa17/led_green/1")
+      })
+      let data_led_green_off= document.getElementById("off_led_green")
+      data_led_green_off.addEventListener("click",()=>{
+      fetch("http://iocontrol.ru/api/sendData/alisa17/led_green/0")
+      })
+      let data_led_yellow_on= document.getElementById("on_led_yellow")
+      data_led_yellow_on.addEventListener("click",()=>{
+      fetch("http://iocontrol.ru/api/sendData/alisa17/led_yellow/1")
+      })
+      let data_led_yellow_off= document.getElementById("off_led_yellow")
+      data_led_yellow_off.addEventListener("click",()=>{
+      fetch("http://iocontrol.ru/api/sendData/alisa17/led_yellow/0")
+      })
+   </script>
+ </body>
 </html>
